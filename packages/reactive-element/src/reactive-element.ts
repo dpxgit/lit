@@ -1298,17 +1298,6 @@ export abstract class ReactiveElement
             shadowedProperties.push(p as string);
           }
         });
-        if (shadowedProperties.length) {
-          throw new Error(
-            `The following properties on element ${this.localName} will not ` +
-              `trigger updates as expected because they are set using class ` +
-              `fields: ${shadowedProperties.join(', ')}. ` +
-              `Native class fields and some compiled output will overwrite ` +
-              `accessors used for detecting changes. See ` +
-              `https://lit.dev/msg/class-field-shadowing ` +
-              `for more information.`
-          );
-        }
       }
     }
     // Mixin instance properties once, if they exist.
